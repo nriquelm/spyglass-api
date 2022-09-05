@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
@@ -21,16 +22,28 @@ public class Goal {
 	@Column(name="goal_id")
 	private int goalId;
 	
+	@NotNull
+	@Column(name="goal_name")
 	private String name;
 	
+	@NotNull
+	@Column(name="goal_description")
 	private String description;
 	
+	@NotNull
+	@Column(name="image_path")
 	private String imagePath;
 	
+	@NotNull
+	@Column(name="target_date")
 	private LocalDate targetDate;
 	
+	@NotNull
+	@Column(name="target_amount")
 	private float targetAmount;
 	
+	@NotNull
+	@Column(name="current_amount")
 	private float currentAmount;
 	
 	public Goal() {
