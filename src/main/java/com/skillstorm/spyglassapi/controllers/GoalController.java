@@ -27,17 +27,17 @@ public class GoalController {
 		return goalService.getGoals();
 	}
 	
-	@PostMapping("/goals/add")
+	@PostMapping("/goals")
 	public void addGoal(@RequestBody Goal goal) {
 		goalService.addGoal(goal);
 	}
 	
-	@PutMapping("/goals/{id}/edit")
+	@PutMapping("/goals/{id}")
 	public void updateGoal(@PathVariable("id") Integer id, @RequestBody Goal goal) {
 		goalService.updateGoal(goal);
 	}
 	
-	@DeleteMapping("/goals/{id}/delete")
+	@DeleteMapping("/goals/{id}")
 	public void deleteGoal(@PathVariable("id") Integer id) {
 		goalService.deleteGoal(id);
 	}
