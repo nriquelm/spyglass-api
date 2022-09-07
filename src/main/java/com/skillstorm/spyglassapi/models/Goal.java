@@ -40,11 +40,11 @@ public class Goal {
 	
 	@NotNull
 	@Column(name="target_amount")
-	private float targetAmount;
+	private double targetAmount;
 	
 	@NotNull
 	@Column(name="current_amount")
-	private float currentAmount;
+	private double currentAmount;
 	
 	public Goal() {
 		
@@ -100,7 +100,7 @@ public class Goal {
 		this.targetDate = targetDate;
 	}
 
-	public float getTargetAmount() {
+	public double getTargetAmount() {
 		return targetAmount;
 	}
 
@@ -108,7 +108,7 @@ public class Goal {
 		this.targetAmount = targetAmount;
 	}
 
-	public float getCurrentAmount() {
+	public double getCurrentAmount() {
 		return currentAmount;
 	}
 
