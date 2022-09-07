@@ -16,7 +16,7 @@ import com.skillstorm.spyglassapi.models.Goal;
 import com.skillstorm.spyglassapi.services.GoalService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class GoalController {
 	
 	@Autowired
