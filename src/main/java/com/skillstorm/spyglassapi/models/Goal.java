@@ -12,6 +12,8 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name="goal")
 @Validated
@@ -36,6 +38,7 @@ public class Goal {
 	
 	@NotNull
 	@Column(name="target_date")
+	@JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
 	private LocalDate targetDate;
 	
 	@NotNull

@@ -1,5 +1,6 @@
 package com.skillstorm.spyglassapi.controllers;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.jboss.logging.Logger;
 
 import com.skillstorm.spyglassapi.models.Goal;
 import com.skillstorm.spyglassapi.services.GoalService;
@@ -18,6 +20,8 @@ import com.skillstorm.spyglassapi.services.GoalService;
 @RestController
 @CrossOrigin(origins = "*")
 public class GoalController {
+	
+	private static final Logger log = Logger.getLogger(GoalController.class);
 	
 	@Autowired
 	private GoalService goalService;
@@ -29,6 +33,7 @@ public class GoalController {
 	
 	@PostMapping("/goals")
 	public void addGoal(@RequestBody Goal goal) {
+		log.warn("Hello World!");
 		goalService.addGoal(goal);
 	}
 	
