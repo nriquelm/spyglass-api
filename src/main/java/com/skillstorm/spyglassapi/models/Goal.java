@@ -42,10 +42,10 @@ public class Goal {
 	
 	@NotNull
 	@Column(name="target_date")
-	@JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
+//	@JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
 	//@JsonDeserialize(using = LocalDateDeserializer.class)
 	//@JsonSerialize(using = LocalDateSerializer.class)
-	private LocalDate targetDate;
+	private String targetDate;
 	
 	@NotNull
 	@Column(name="target_amount")
@@ -59,7 +59,7 @@ public class Goal {
 		
 	}
 	
-	public Goal(int goalId, String name, String description, String imagePath, LocalDate targetDate, float targetAmount, float currentAmount) {
+	public Goal(int goalId, String name, String description, String imagePath, String targetDate, float targetAmount, float currentAmount) {
 		this.goalId = goalId;
 		this.name = name;
 		this.description = description;
@@ -101,11 +101,11 @@ public class Goal {
 		this.imagePath = imagePath;
 	}
 
-	public LocalDate getTargetDate() {
+	public String getTargetDate() {
 		return targetDate;
 	}
 
-	public void setTargetDate(LocalDate targetDate) {
+	public void setTargetDate(String targetDate) {
 		this.targetDate = targetDate;
 	}
 
