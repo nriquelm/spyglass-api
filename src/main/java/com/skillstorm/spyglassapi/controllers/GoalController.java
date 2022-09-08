@@ -33,7 +33,6 @@ public class GoalController {
 	
 	@PostMapping("/goals")
 	public void addGoal(@RequestBody Goal goal) {
-		log.warn("Hello World!");
 		goalService.addGoal(goal);
 	}
 	

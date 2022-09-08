@@ -13,6 +13,10 @@ import javax.validation.constraints.NotNull;
 import org.springframework.validation.annotation.Validated;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 @Entity
 @Table(name="goal")
@@ -39,6 +43,8 @@ public class Goal {
 	@NotNull
 	@Column(name="target_date")
 	@JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
+	//@JsonDeserialize(using = LocalDateDeserializer.class)
+	//@JsonSerialize(using = LocalDateSerializer.class)
 	private LocalDate targetDate;
 	
 	@NotNull
