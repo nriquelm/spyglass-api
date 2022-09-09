@@ -1,7 +1,5 @@
 package com.skillstorm.spyglassapi.models;
 
-import java.time.LocalDate;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,15 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
 import org.springframework.validation.annotation.Validated;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
+/**
+ * Model for a Goal
+ */
 @Entity
 @Table(name="goal")
 @Validated
@@ -42,9 +37,6 @@ public class Goal {
 	
 	@NotNull
 	@Column(name="target_date")
-//	@JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
-	//@JsonDeserialize(using = LocalDateDeserializer.class)
-	//@JsonSerialize(using = LocalDateSerializer.class)
 	private String targetDate;
 	
 	@NotNull

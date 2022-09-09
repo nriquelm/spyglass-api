@@ -5,6 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import com.skillstorm.spyglassapi.models.Goal;
 
+
+/**
+ * A repository that accesses data about goals. 
+ */
 @Repository
 public interface GoalRepository extends JpaRepository<Goal, Integer> {
 
